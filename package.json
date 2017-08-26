@@ -1,0 +1,15 @@
+{
+  "name": "rime-cangjie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rime/rime-cangjie.git",
+  "author": "wl00887404 <wl00887404@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "node server"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "node-fetch": "^1.7.2"
+  }
+}

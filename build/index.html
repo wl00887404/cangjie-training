@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            background-color: #2a2c2b;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            margin-bottom: 1rem;
+            font-weight: normal;
+            color: #6fbb95;
+        }
+
+        h2 {
+            font-size: 10em;
+        }
+
+        h3 {
+            font-size: 2em;
+            height: 1.4em;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            min-width: 10em;
+            border-bottom: 2px #6fbb95 solid;
+            padding: 0.2em;
+        }
+        h4{
+            min-width: 10em;            
+            font-size: 2em;
+            color:red;
+            height: 1.4em;
+            padding: 0.2em;                  
+        }
+        input {
+            opacity: 0;
+            top:0;
+            left: 0;
+            position: absolute;
+        }
+
+        input:focus~h3 .cursor {
+            display: inline-block;
+            height: 1em;
+            width: 0;
+            /* margin:0 0.2em; */
+            background-color: #6fbb95;
+            width: 2px;
+            animation: blink 800ms infinite linear;
+            opacity: 1;
+        }
+
+        @keyframes blink {
+            0%,
+            50% {
+                visibility: visible;
+            }
+            50%,
+            100% {
+                visibility: hidden;
+            }
+        }
+
+        iframe {
+            /* position: absolute;
+            top: 0;
+            right: 0; */
+            /* max-width: 800px; */
+            width: 800px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="h2"></h2>
+        <input id="input" type="password" autofocus/>
+        <h3 id="h3"></h3>
+        <h4 id="h4"></h4>
+        <img id="img" alt=""></img>
+    </div>
+    <!-- <div>
+        <iframe src="http://input.foruto.com/cccls/cjzd.html" width="800" height="600"></iframe>
+    </div> -->
+</body>
+<script src="./script.js"></script>
+
+</html>
