@@ -50,9 +50,9 @@ class Game {
         this.accInput = ""
 
         input.value = ""
-        h4.innerHTML=""
-        img.src = ""        
-        
+        h4.innerHTML = ""
+        img.src = ""
+
         this.cursor = 0
         this.render()
     }
@@ -81,23 +81,34 @@ class Game {
             .filter(el => el.toUpperCase().charCodeAt() > 64 && el.toUpperCase().charCodeAt() < 91)
             .join('')
         this.accInput = target.value
+        target.setSelectionRange(this.accInput.length + this.cursor, this.accInput.length + this.cursor)
         this.render()
     }
     onkeydown({keyCode, key}) {
         switch (keyCode) {
             case 13:
-                this.submit();
-                break
-            case 37:
-                this.cursor -= 1
-                this.render();
-                break
-            case 39:
-                if (this.cursor < 0) {
-                    this.cursor += 1
-                    this.render()
+
+                {
+                    this.submit();
+
+                    break
                 }
-                break
+            case 37:
+                {
+                    this.cursor -= 1
+                    this.render()
+                    break
+
+                }
+            case 39:
+            case 46:
+                {
+                    if (this.cursor < 0) {
+                        this.cursor += 1
+                        this.render()
+                    }
+                    break
+                }
         }
     }
 }
